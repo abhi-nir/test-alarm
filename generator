@@ -1,10 +1,10 @@
 #!/bin/bash
-num=41
-while [ $num -gt 20 ]
+num=103
+while [ $num -gt 91 ]
 do
     for pol in `kubectl get cpol | awk '{print $1}'`                                                         
     do
     kubectl get cpol $pol -o yaml | sed -e "s/name: $pol/name: ${pol}-${num}/"
-    echo "---"; done >> allpolicies104.yaml
+    echo "---"; done >> g312/allpolicies312.yaml
     ((num--))
 done
